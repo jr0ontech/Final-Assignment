@@ -73,7 +73,7 @@ router.post('/edit/:id', async (req, res) => {
     console.error(err);
     res.status(500).render('edit_tournament', {
       message: 'Error updating the tournament: ' + err.message,
-      title,
+      title: req.body.title,
       description,
       date,
       type
