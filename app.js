@@ -1,0 +1,27 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const config = require('./config');
+const app = express();
+const router = express.Router();
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
+mongoose.connect(config.databaseURL,);
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+const myMiddleware = (req, res, next) => {
+  console.log('Middleware executed');
+  next();
+};
+
+router.use(myMiddleware);
+
+const homeRoute = require('./routes/index');
+
+app.use('/', homeRoute);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(37, 37, 37);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+.team-logo {
+  height: 60px;
+  width: 60px;
+}
+
+.top-bar {
+  overflow: hidden;
+  font-family: 'Josefin Sans';
+  position: relative;
+}
+
+.top-bar a {
+  float: left;
+  color: #888888;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 25px;
+  transition: transform 0.3s ease;
+}
+
+.top-bar a:hover {
+  color: black;
+  transform: translateY(-5px);
+}
+
+.team-text {
+  font-family: 'Josefin Sans';
+  color: white;
+  margin-top: 0;
+  font-size: 20px;
+}
+
