@@ -136,6 +136,24 @@ body {
   background-color: #ff8c00; 
 }
 
+.login-button {
+  position: fixed;
+  top: 16px;
+  right: 234px; 
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgb(117, 155, 94);;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-family: 'Josefin Sans';
+  font-weight: bold;
+}
+
 .tournament-list{
   font-family: 'Josefin Sans';
   font-size: 20px;

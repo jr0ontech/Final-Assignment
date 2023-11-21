@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <body>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+<title>Add a Tournament</title>
 <header class="header">
 <div class="top-bar">
   <a href="/">Home</a>
@@ -27,8 +30,12 @@
     <label for="date">Date:</label>
     <input type="date" id="date" name="date" required>
     <br><br>
-    <label for="type">Type:</label>
-    <input type="text" id="type" name="type" required>
+    <label for="type">Select a Tournament:</label>
+    <select type="text" id="type" name="type" required>
+        <option value="1v1">1v1</option>
+        <option value="2v2">2v2</option>
+        <option value="FFA">FFA</option>
+    </select>
     <br><br>
     <button type="submit">Submit</button>
 </form>
