@@ -18,12 +18,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: left;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   font-family: 'Josefin Sans';
   font-size: 15px;
+}
+.middle {
+  position: absolute;
+  top: 725px;
+  left: 0;
+  width: 100%;
+  height: 126%;
+  background-color: white; /* Black overlay with 50% opacity */
+  z-index: 1; /* Ensure the overlay is on top of other elements */
 }
 
 .footer {
@@ -39,18 +48,27 @@ body {
   left: 0;
   width: 100%;
   font-family: 'Josefin Sans';
-  font-size: 15px;
+  font-size: 13px;
+  z-index: 3;
 }
 
 
 .team-logo {
   position: fixed;
-  top: 0;
-  left: 0;
-  position: fixed;
+  top: -182px;
+  left: -878px;
+  position: relative;
   width: 160px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   margin-left: 15px;
+}
+
+.gameplay-home {
+  position: fixed;
+  top: -183px;
+  left: 0;
+  width: 1948px;
+  height: auto;
 }
 
 .top-bar {
@@ -78,9 +96,9 @@ body {
 
 .header-underthing {
   position: relative;
-  top: 48px;
+  top: -21px;
   left: 0;
-  width: 1922px;
+  width: 1920px;
   height: auto;
 }
 
@@ -98,6 +116,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  position: absolute;
+  top: 224px;
 }
 
 
@@ -115,9 +135,9 @@ body {
 }
 
 .orange-button {
-  position: fixed;
-  top: 16px;
-  right: 20px; 
+  position: relative;
+  top: -89px;
+  right: -834px; 
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -137,9 +157,9 @@ body {
 }
 
 .login-button {
-  position: fixed;
-  top: 16px;
-  right: 234px; 
+  position: relative;
+  top: -128px;
+  right: -685px; 
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
