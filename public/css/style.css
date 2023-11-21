@@ -73,15 +73,14 @@ body {
 }
 
 .top-bar a:hover {
-  color: black;
-  transform: translateY(-5px);
+  color: rgb(120, 179, 219);
 }
 
 .header-underthing {
   position: fixed;
-  top: 48px; /* Adjust the top position to place it under the team-logo */
+  top: 48px;
   left: 0;
-  width: 1922px; /* Adjust the width as needed */
+  width: 1922px;
   height: auto;
 }
 
@@ -101,3 +100,51 @@ body {
   text-align: center;
 }
 
+
+
+/*Tournament Page*/
+.tournament-content{
+  font-family: 'Josefin Sans';
+  font-size: 35px;
+  color: rgb(228, 232, 128);;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.orange-button {
+  position: fixed;
+  top: 16px;
+  right: 20px; 
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #ffA500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-family: 'Josefin Sans';
+  font-weight: bold;
+}
+
+.orange-button:hover {
+  background-color: #ff8c00; 
+}
+
+
+/*Add Tournament Page */
+.addtournament-content{
+  font-family: 'Josefin Sans';
+  font-size: 30px;
+  color: rgb(228, 232, 128);;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

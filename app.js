@@ -20,6 +20,8 @@ router.use(myMiddleware);
 const homeRoute = require('./routes/index');
 
 app.use('/', homeRoute);
+const tournamentsRoutes = require('./routes/tournaments');
+app.use('/tournaments', tournamentsRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
