@@ -12,18 +12,73 @@
 </div>
 </header>
 <img class="header-underthing" src="/images/underthing.png">
-<a href="#" class="orange-button">Host a Tournament</a>
+<a href="/tournaments/new" class="orange-button">Host a Tournament</a>
 
 <img class="team-logo" src="/images/teamlogobetter.webp">
-<div class="home-content">
-  <p>Tournament Text Place Holder</p>
+<div class="tournament-content">
+  <p>Current Tournaments Posted</p>
 </div>
-
+<main class="content">
+  <% if (tournaments && tournaments.length > 0) { %>
+    <ul class="tournament-list">
+      <% tournaments.forEach(function(tournament) { %>
+        <li class="tournament-item">
+          <h3 class="tournament-title">Title: <%= tournament.title %></h3>
+          <p class="tournament-description">Description: <%= tournament.description %></p>
+          <p class="tournament-date">Date: <%= tournament.date.toDateString() %></p>
+          <p class="tournament-type">Type: <%= tournament.type %></p>
+          <button class="delete-button" onClick="window.location.reload();" data-tournament-id="<%= tournament._id %>">Delete</button>
+          <button class="edit-button" data-tournament-id="<%= tournament._id %>">Edit</button>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <div class="info-message">
+      <p>Nothing to show here</p>
+    </div>
+  <% } %>
+</main>
 <footer class="footer">
 <p class="team-text">Team JustONS©️</p>
 </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-button');
+    
+    deleteButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const tournamentId = this.dataset.tournamentId;
+        deleteTournament(tournamentId);
+      });
+    });
 
+    const editButtons = document.querySelectorAll('.edit-button');
 
+    editButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        const tournamentId = this.dataset.tournamentId;
+        window.location.href = `/tournaments/edit/${tournamentId}`;
+      });
+    });
+
+    function deleteTournament(tournamentId) {
+      fetch(`/tournaments/${tournamentId}`, {
+        method: 'DELETE',
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  });
+</script>
 </body>
 </html> 
-

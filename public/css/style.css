@@ -108,7 +108,7 @@ body {
   font-size: 35px;
   color: rgb(228, 232, 128);;
   position: absolute;
-  top: 45%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -134,6 +134,18 @@ body {
 
 .orange-button:hover {
   background-color: #ff8c00; 
+}
+
+.tournament-list{
+  font-family: 'Josefin Sans';
+  font-size: 20px;
+  color: rgb(228, 232, 128);;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin-top: 10px;
 }
 
 
