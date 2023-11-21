@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Mukta&display=swap');
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(37, 37, 37);
+  background-color: rgb(35, 35, 35);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,24 +11,64 @@ body {
   min-height: 100vh;
 }
 
+.header {
+  background-color: white;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-family: 'Josefin Sans';
+  font-size: 15px;
+}
+
+.footer {
+  background-color: rgb(42, 42, 42);
+  color: white;
+  padding: 1px; 
+  text-align: center; 
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-family: 'Josefin Sans';
+  font-size: 15px;
+}
+
+
 .team-logo {
-  height: 60px;
-  width: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 160px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 15px;
 }
 
 .top-bar {
   overflow: hidden;
-  font-family: 'Josefin Sans';
+  font-family: 'Mukta', sans-serif;
+  font-weight: bolder;
   position: relative;
+  margin-left: 175px;
+  margin-top: 19px;
+  margin-bottom: 15px;
 }
 
 .top-bar a {
-  float: left;
-  color: #888888;
-  text-align: center;
-  padding: 20px 20px;
+  color: #073747;
+  text-align: left;
+  padding: 20px 10px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   transition: transform 0.3s ease;
 }
 
@@ -37,10 +77,27 @@ body {
   transform: translateY(-5px);
 }
 
-.team-text {
+.header-underthing {
+  position: fixed;
+  top: 48px; /* Adjust the top position to place it under the team-logo */
+  left: 0;
+  width: 1922px; /* Adjust the width as needed */
+  height: auto;
+}
+
+.team-text{
+  margin-top: 1;
+  margin-bottom: 1;
+}
+
+.home-content{
   font-family: 'Josefin Sans';
-  color: white;
-  margin-top: 0;
-  font-size: 20px;
+  font-size: 35px;
+  color: rgb(228, 232, 128);;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
