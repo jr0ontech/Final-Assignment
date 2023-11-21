@@ -24,6 +24,8 @@ app.use('/', homeRoute);
 
 const tournamentsRoutes = require('./routes/tournaments');
 app.use('/tournaments', tournamentsRoutes);
+const loginRoutes = require('./routes/logins');
+app.use('/logins', loginRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

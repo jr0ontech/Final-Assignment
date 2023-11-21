@@ -178,3 +178,15 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+/*Login Page */
+.login-form{
+  font-family: 'Josefin Sans';
+  font-size: 30px;
+  color: rgb(228, 232, 128);;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

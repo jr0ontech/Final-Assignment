@@ -4,6 +4,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
+<title>Register Page</title>
 <header class="header">
 <div class="top-bar">
   <a href="/">Home</a>
@@ -14,23 +15,22 @@
 </div>
 </header>
 <img class="header-underthing" src="/images/underthing.png">
-<a href="/tournaments/new" class="orange-button">Host a Tournament</a>
+<a href="/add_tournament" class="orange-button">Host a Tournament</a>
+
 <img class="team-logo" src="/images/teamlogobetter.webp">
-<div class="home-content">
-  <p>Login Page Text Place Holder</p>
-</div>
-<div class="login-form">
-    <form>
-    <label for="title">Username:</label>
-    <input type="text" id="Username" name="Username" required>
+<div class="addtournament-content">
+  <p>Please enter your username and password to register</p><br><br>
+  <form action="/logins" method="POST">
+    <label for="user">Username:</label>
+    <input type="text" id="user" name="user" required>
     <br><br>
-    <label for="description">Password:</label>
-    <input type="text" id="description" name="description" required>
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password" required>
     <br><br>
     <button type="submit">Submit</button>
-    </form>
-    <a href="/logins/new">Register</a>
+</form>
 </div>
+
 <footer class="footer">
 <p class="team-text">Team JustONS©️</p>
 </footer>

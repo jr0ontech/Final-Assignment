@@ -12,4 +12,7 @@ router.get('/about', (req, res) => {
 router.get('/contact', (req, res) => {
   res.render('contact');
 });
+router.get('/loginpage', (req, res) => {
+  res.render('loginpage');
+});
 module.exports = router;
