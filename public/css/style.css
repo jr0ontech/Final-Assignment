@@ -55,9 +55,9 @@ body {
 
 .team-logo {
   position: fixed;
-  top: -182px;
-  left: -878px;
-  position: relative;
+  top: 1px;
+  left: -14px;
+  position: absolute;
   width: 160px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   margin-left: 15px;
@@ -95,13 +95,12 @@ body {
 }
 
 .header-underthing {
-  position: relative;
-  top: -21px;
+  position: absolute;
+  top: 49px;
   left: 0;
   width: 1920px;
   height: auto;
 }
-
 .team-text{
   margin-top: 1;
   margin-bottom: 1;
@@ -135,9 +134,9 @@ body {
 }
 
 .orange-button {
-  position: relative;
-  top: -89px;
-  right: -834px; 
+  position: absolute;
+  top: 16px;
+  right: 27px; 
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -157,9 +156,9 @@ body {
 }
 
 .login-button {
-  position: relative;
-  top: -128px;
-  right: -685px; 
+  position: absolute;
+  top: 16px;
+  right: 225px; 
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
@@ -177,13 +176,14 @@ body {
 .tournament-list{
   font-family: 'Josefin Sans';
   font-size: 20px;
-  color: rgb(228, 232, 128);;
+  color: rgb(228, 232, 128);
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  margin-top: 10px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 
