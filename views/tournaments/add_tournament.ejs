@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+<title>Add a Tournament</title>
+<header class="header">
+<div class="top-bar">
+  <a href="/">Home</a>
+  <a href="/tournaments">Tournaments</a>
+  <a href="/news">News</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
+</div>
+</header>
+<img class="header-underthing" src="/images/underthing.png">
+<% if (user) { %>
+  <a href="/logins/logout" class="logout-button">Logout</a>
+  <a href="/tournaments/new" class="host-button">Host a Tournament</a>
+  <a href="/account" class="account-button">Account</a>
+<% } else { %>
+  <a href="/loginpage" class="login-button">Login</a>
+  <a href="/loginpage" class="host-button">Host a Tournament</a>
+<% } %>
+
+<img class="team-logo" src="/images/teamlogobetter.webp">
+<div class="addtournament-content">
+  <p>Please add all the details of your tournament</p><br><br>
+  <form action="/tournaments" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+    <br><br>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" required>
+    <br><br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+    <br><br>
+    <label for="type">Select a Tournament:</label>
+    <select type="text" id="type" name="type" required>
+        <option value="1v1">1v1</option>
+        <option value="2v2">2v2</option>
+        <option value="FFA">FFA</option>
+    </select>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
+</div>
+
+<footer class="footer">
+<p class="team-text">Team JustONS©️</p>
+</footer>
+</body>
+</html> 
+

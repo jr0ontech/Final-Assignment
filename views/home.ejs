@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html>
 <body>
-<head>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<title>Home Page</title>
-<div class="middle"></div>
-<!--<img class="gameplay-home" src="/images/brawlhallagameplay.gif">-->
-<header class="header">
-<div class="top-bar">
-  <a href="/">Home</a>
-  <a href="/tournaments">Tournaments</a>
-  <a href="/news">News</a>
-  <a href="/about">About</a>
-  <a href="/contact">Contact</a>
-</div>
-</header>
-<img class="header-underthing" src="/images/underthing.png">
-<a href="/tournaments/new" class="orange-button">Host a Tournament</a>
-<a href="/loginpage" class="login-button">Login</a>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <title>Home Page</title>
+  <div class="middle"></div>
+  <header class="header">
+    <div class="top-bar">
+      <a class="activepage" href="/">Home</a>
+      <a href="/tournaments">Tournaments</a>
+      <a href="/news">News</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </header>
+  <img class="header-underthing" src="/images/underthing.png">
 
+  <% if (user) { %>
+    <a href="/logins/logout" class="logout-button">Logout</a>
+    <a href="/tournaments/new" class="host-button">Host a Tournament</a>
+    <a href="/account" class="account-button">Account</a>
+  <% } else { %>
+    <a href="/loginpage" class="login-button">Login</a>
+    <a href="/loginpage" class="host-button">Host a Tournament</a>
+  <% } %>
 
-<img class="team-logo" src="/images/teamlogobetter.webp">
-<div class="home-content">
-  <!--<p>Home Text Place Holder</p>-->
-</div>
+  <img class="team-logo" src="/images/teamlogobetter.webp">
+  <div class="home-content">
+    <p>Hey there, this is a website to host Brawlhalla tournaments, host 1v1, 2v2, or Free For all matches.</p>
+  </div>
 
-<footer class="footer">
-<p class="team-text">Team JustONS©️</p>
-</footer>
+  <footer class="footer">
+    <p class="team-text">Team JustONS©️</p>
+  </footer>
 </body>
-</html> 
-
+</html>

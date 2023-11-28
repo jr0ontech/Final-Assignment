@@ -5,7 +5,7 @@ const Tournament = require('../models/Tournament');
 router.get('/', async (req, res) => {
   try {
     const tournaments = await Tournament.find();
-    return res.render('tournaments', { tournaments });
+    return res.render('tournaments/tournaments', { tournaments, user: req.user });
   } catch (err) {
     console.error(err);
     res.status(500).send("Error getting tournaments.");
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-  res.render('add_tournament', { message: null });
+  res.render('tournaments/add_tournament', { message: null, user: req.user });
 });
 
 router.post('/', async (req, res) => {
@@ -24,7 +24,8 @@ router.post('/', async (req, res) => {
         message: 'Title is required.',
         description,
         date,
-        type
+        type,
+        user: req.user
       });
     }
 
@@ -33,16 +34,16 @@ router.post('/', async (req, res) => {
     res.redirect('/tournaments');
   } catch (err) {
     console.error(err);
-    res.status(500).render('add_tournament', {
+    res.status(500).render('tournaments/add_tournament', {
       message: 'Error saving the tournament: ' + err.message,
       title: req.body.title,
       description: req.body.description,
       date: req.body.date,
-      type: req.body.type
+      type: req.body.type,
+      user: req.user
     });
   }
 });
-
 
 router.delete('/:id', async (req, res) => {
   try {
@@ -57,7 +58,7 @@ router.delete('/:id', async (req, res) => {
 router.get('/edit/:id', async (req, res) => {
   try {
     const tournament = await Tournament.findById(req.params.id);
-    res.render('edit_tournament', { tournament, message: null });
+    res.render('tournaments/edit_tournament', { tournament, message: null, user: req.user });
   } catch (err) {
     console.error(err);
     res.status(500).send('Error getting tournament details for editing');
@@ -71,12 +72,13 @@ router.post('/edit/:id', async (req, res) => {
     res.redirect('/tournaments');
   } catch (err) {
     console.error(err);
-    res.status(500).render('edit_tournament', {
+    res.status(500).render('tournaments/edit_tournament', {
       message: 'Error updating the tournament: ' + err.message,
       title,
       description,
       date,
-      type
+      type,
+      user: req.user
     });
   }
 });  
