@@ -56,7 +56,6 @@ router.post('/', async (req, res) => {
     await Login.register({ username, email, created }, password);
     
     passport.authenticate('local')(req, res, () => {
-      // Redirect to the desired page after successful registration and authentication
       res.redirect('/');
     });
   } catch (err) {
@@ -65,7 +64,7 @@ router.post('/', async (req, res) => {
       message: 'Error saving the login: ' + err.message,
       username: req.body.username,
       password: req.body.password,
-      user: req.user // Include the user information in the render
+      user: req.user
     });
   }
 });

@@ -22,16 +22,18 @@
 </div>
 <div class="login-form">
   <form action="/logins/login" method="POST">
-    <label for="username">Username:</label>
+    <label for="username" class="username-text">Username</label>
+    <br>
     <input type="text" id="username" name="username" required>
-  
-    <label for="password">Password:</label>
+    <br><br>
+    <label for="password">Password</label>
+    <br>
     <input type="password" id="password" name="password" required>
-  
+    <br>
     <button type="submit">Login</button>
   </form>
   
-    <a href="/logins/new">Register</a>
+    <a class="register-button" href="/logins/new">Register</a>
 </div>
 <footer class="footer">
 <p class="team-text">Team JustONS©️</p>
