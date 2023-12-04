@@ -15,11 +15,20 @@
 </div>
 </header>
 <img class="header-underthing" src="/images/underthing.png">
-<a href="/tournaments/new" class="orange-button">Host a Tournament</a>
+<a href="/loginpage" class="login-button">Login</a>
+
+<% if (user) { %>
+  <a href="/logins/logout" class="logout-button">Logout</a>
+  <a href="/tournaments/new" class="host-button">Host a Tournament</a>
+  <a href="/account" class="account-button">Account</a>
+<% } else { %>
+  <a href="/loginpage" class="login-button">Login</a>
+  <a href="/loginpage" class="host-button">Host a Tournament</a>
+<% } %>
 
 <img class="team-logo" src="/images/teamlogobetter.webp">
 <div class="home-content">
-  <p>Contact Text Place Holder</p>
+  <p>Contact Inquires coming soon.</p>
 </div>
 
 <footer class="footer">
@@ -27,4 +36,3 @@
 </footer>
 </body>
 </html> 
-
