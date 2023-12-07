@@ -4,7 +4,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
-<title>News Page</title>
+<title>Register Page</title>
 <header class="header">
 <div class="top-bar">
   <a href="/">Home</a>
@@ -15,22 +15,20 @@
 </div>
 </header>
 <img class="header-underthing" src="/images/underthing.png">
-<a href="/loginpage" class="login-button">Login</a>
-
-<% if (user) { %>
-  <a href="/logins/logout" class="logout-button">Logout</a>
-  <a href="/tournaments/new" class="host-button">Host a Tournament</a>
-  <a href="/account" class="account-button">Account</a>
-<% } else { %>
-  <a href="/loginpage" class="login-button">Login</a>
-  <a href="/loginpage" class="host-button">Host a Tournament</a>
-<% } %>
-
 <img class="team-logo" src="/images/teamlogobetter.webp">
-<div class="home-content">
-  <p>News Coming Soon!</p>
+<div class="addtournament-content">
+  <p>Please enter your username and password to register</p><br><br>
+  <form action="/logins" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <br><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required>
+    <button type="submit">Submit</button>
+</form>
 </div>
-
 <footer class="footer">
 <p class="team-text">Team JustONS©️</p>
 </footer>

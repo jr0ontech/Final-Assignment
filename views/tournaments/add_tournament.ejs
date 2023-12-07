@@ -4,7 +4,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
-<title>About Page</title>
+<title>Add a Tournament</title>
 <header class="header">
 <div class="top-bar">
   <a href="/">Home</a>
@@ -15,8 +15,6 @@
 </div>
 </header>
 <img class="header-underthing" src="/images/underthing.png">
-<a href="/loginpage" class="login-button">Login</a>
-
 <% if (user) { %>
   <a href="/logins/logout" class="logout-button">Logout</a>
   <a href="/tournaments/new" class="host-button">Host a Tournament</a>
@@ -27,11 +25,27 @@
 <% } %>
 
 <img class="team-logo" src="/images/teamlogobetter.webp">
-<div class="about-content">
-  <br>
-  <p>This Website, created by Jake, Justin, Hovo, and Hrag allows users to create, edit and delete custom made Brawlhalla tournaments.</p>
-  <br>
-  <p>This design is based off the offical brawlhalla website</p>
+<div class="addtournament-content">
+  <p>Please add all the details of your tournament</p><br><br>
+  <form action="/tournaments" method="POST">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required>
+    <br><br>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" required>
+    <br><br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+    <br><br>
+    <label for="type">Select a Tournament:</label>
+    <select type="text" id="type" name="type" required>
+        <option value="1v1">1v1</option>
+        <option value="2v2">2v2</option>
+        <option value="FFA">FFA</option>
+    </select>
+    <br><br>
+    <button type="submit">Submit</button>
+</form>
 </div>
 
 <footer class="footer">
@@ -39,3 +53,4 @@
 </footer>
 </body>
 </html> 
+

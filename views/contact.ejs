@@ -1,33 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <title></title>
+</head>
+
 <body>
-  <head>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-  </head>
-<title>Contact Page</title>
-<header class="header">
-<div class="top-bar">
-  <a href="/">Home</a>
-  <a href="/tournaments">Tournaments</a>
-  <a href="/news">News</a>
-  <a href="/about">About</a>
-  <a href="/contact">Contact</a>
-</div>
-</header>
-<img class="header-underthing" src="/images/underthing.png">
-<a href="/tournaments/new" class="orange-button">Host a Tournament</a>
-<a href="/loginpage" class="login-button">Login</a>
+  <header class="header">
+    <div class="top-bar">
+      <a href="/">Home</a>
+      <a href="/tournaments">Tournaments</a>
+      <a href="/news">News</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </header>
 
+  <img class="header-underthing" src="/images/underthing.png">
 
+  <a href="/loginpage" class="login-button">Login</a>
 
-<img class="team-logo" src="/images/teamlogobetter.webp">
-<div class="home-content">
-  <p>Contact Inquires coming soon.</p>
-</div>
+  <% if (user) { %>
+    <a href="/logins/logout" class="logout-button">Logout</a>
+    <a href="/tournaments/new" class="host-button">Host a Tournament</a>
+    <a href="/account" class="account-button">Account</a>
+  <% } else { %>
+    <a href="/loginpage" class="login-button">Login</a>
+    <a href="/loginpage" class="host-button">Host a Tournament</a>
+  <% } %>
 
-<footer class="footer">
-<p class="team-text">Team JustONS©️</p>
-</footer>
+  <img class="team-logo" src="/images/teamlogobetter.webp">
+
+  <div id="wrapper" class="addtournament-content">
+    <form action= "mailto:brawlhallajhjh2@hotmail.com" method="post" name="Form" class="login-form">
+      <p>
+        <label for="name">Name : </label>
+        <input type="text" name="name" size="40" placeholder="Name" required>
+      </p>
+      <p>
+        <label for="email">Email : </label>
+        <input type="email" name="email" size="40" placeholder="Email" required>
+      </p>
+      <p>
+        <label for="feedback">Comments and Inquiries : </label><br>
+        <textarea name="feedback" cols="60" rows="8" placeholder="Type your message here"></textarea>
+      </p>
+      <input type="submit" value="Submit" class="button orange-button">
+    </form>
+  </div>
+
+  <footer class="footer">
+    <p class="team-text">Team JustONS©️</p>
+  </footer>
 </body>
-</html> 
 
+</html>

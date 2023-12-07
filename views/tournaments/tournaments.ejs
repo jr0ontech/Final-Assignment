@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <head>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-  </head>
-<title>Tournaments Page</title>
+<head>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<title>Home Page</title>
+<!--<img class="gameplay-home" src="/images/brawlhallagameplay.gif">-->
 <header class="header">
 <div class="top-bar">
   <a href="/">Home</a>
@@ -15,11 +16,17 @@
 </div>
 </header>
 <img class="header-underthing" src="/images/underthing.png">
-<a href="/tournaments/new" class="orange-button">Host a Tournament</a>
-
+<% if (user) { %>
+  <a href="/logins/logout" class="logout-button">Logout</a>
+  <a href="/tournaments/new" class="host-button">Host a Tournament</a>
+  <a href="/account" class="account-button">Account</a>
+<% } else { %>
+  <a href="/loginpage" class="login-button">Login</a>
+  <a href="/loginpage" class="host-button">Host a Tournament</a>
+<% } %>
 <img class="team-logo" src="/images/teamlogobetter.webp">
-<div class="tournament-content">
-  <p>Current Tournaments Posted</p>
+<div class="home-content">
+  <!--<p>Home Text Place Holder</p>-->
 </div>
 <main class="content">
   <% if (tournaments && tournaments.length > 0) { %>
@@ -30,17 +37,21 @@
           <p class="tournament-description">Description: <%= tournament.description %></p>
           <p class="tournament-date">Date: <%= tournament.date.toDateString() %></p>
           <p class="tournament-type">Type: <%= tournament.type %></p>
-          <button class="delete-button" onClick="window.location.reload();" data-tournament-id="<%= tournament._id %>">Delete</button>
-          <button class="edit-button" data-tournament-id="<%= tournament._id %>">Edit</button>
+
+          <% if (user) { %>
+            <button class="delete-button" onClick="window.location.reload();" data-tournament-id="<%= tournament._id %>">Delete</button>
+            <button class="edit-button" data-tournament-id="<%= tournament._id %>">Edit</button>
+          <% } %>
         </li>
       <% }) %>
     </ul>
   <% } else { %>
     <div class="info-message">
-      <p>Nothing to show here</p>
+      <p class="nothing-here">Nothing to show here</p>
     </div>
   <% } %>
 </main>
+
 <footer class="footer">
 <p class="team-text">Team JustONS©️</p>
 </footer>
@@ -83,5 +94,22 @@
     }
   });
 </script>
+
+<footer class="footer">
+<p class="team-text">Team JustONS©️</p>
+</footer>
 </body>
+
+<style>
+ ul {
+  list-style-type: none;
+} 
+
+.nothing-here{
+  font-family: 'Josefin Sans';
+  font-size: 30px;
+  color: rgb(228, 232, 128);
+}
+</style>
 </html> 
+
